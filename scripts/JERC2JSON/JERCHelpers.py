@@ -6,47 +6,39 @@ import re
 import os
 from statistics import mean, median, stdev
 
-JEC2016preVFP=[
-"Summer19UL16APV_RunBCD_V7_DATA",
-"Summer19UL16APV_RunEF_V7_DATA",
-"Summer19UL16APV_V7_MC",
+JEC2016=[
+'Summer16_07Aug2017BCD_V11_DATA',
+'Summer16_07Aug2017EF_V11_DATA',
+'Summer16_07Aug2017GH_V11_DATA',
+'Summer16_07Aug2017_V11_MC',
 ]
 
-JER2016preVFP=[
-"Summer20UL16APV_JRV3_MC",
-]
-JEC2016postVFP=[
-"Summer19UL16_RunFGH_V7_DATA",
-"Summer19UL16_V7_MC",
-]
-
-JER2016postVFP=[
-"Summer20UL16_JRV3_MC"
+JER2016=[
+"Summer16_25nsV1_MC",
 ]
 
 JEC2017=[
-"Summer19UL17_V5_MC",
-"Summer19UL17_RunB_V5_DATA",
-"Summer19UL17_RunC_V5_DATA",
-"Summer19UL17_RunD_V5_DATA",
-"Summer19UL17_RunE_V5_DATA",
-"Summer19UL17_RunF_V5_DATA",
+'Fall17_17Nov2017_V32_MC',
+'Fall17_17Nov2017B_V32_DATA',
+'Fall17_17Nov2017C_V32_DATA',
+'Fall17_17Nov2017DE_V32_DATA',
+'Fall17_17Nov2017F_V32_DATA',
 ]
 
 JER2017=[
-"Summer19UL17_JRV2_MC",
+"Fall17_V3b_MC",
 ]
 
 JEC2018=[
-"Summer19UL18_V5_MC",
-"Summer19UL18_RunA_V5_DATA",
-"Summer19UL18_RunB_V5_DATA",
-"Summer19UL18_RunC_V5_DATA",
-"Summer19UL18_RunD_V5_DATA",
+'Autumn18_V19_MC',
+'Autumn18_RunA_V19_DATA',
+'Autumn18_RunB_V19_DATA',
+'Autumn18_RunC_V19_DATA',
+'Autumn18_RunD_V19_DATA',
 ]
 
 JER2018=[
-"Summer19UL18_JRV2_MC",
+"Autumn18_V7_MC",
 ]
 
 algosToConsider=[
