@@ -30,16 +30,20 @@ for lvl in correctionLevels:
 #exit(0)
 #JECParamsIndiv = [ROOT.JetCorrectorParameters("{}_{}_{}.txt".format(args.inputTXT,lvl,args.AlgoType),"")  for lvl in correctionLevels]
 
+file_to_try = '{}/{}_UncertaintySources_{}.txt'.format(args.inputTXT,args.inputTXT,args.AlgoType)
+regrouped_file_to_try = '{}/RegroupedV2_{}_UncertaintySources_{}.txt'.format(args.inputTXT,args.inputTXT,args.AlgoType)
+if os.path.isfile(regrouped_file_to_try):
+    file_to_try = regrouped_file_to_try
+
 SourceSections = []
 if "MC" in args.inputTXT: #only provide uncertainty sources for MC
-    with open('{}/{}_UncertaintySources_{}.txt'.format(args.inputTXT,args.inputTXT,args.AlgoType),'r') as f:
+    with open(file_to_try,'r') as f:
         #  SourceSections = ["{}_{}".format(line.strip().strip('[]'),args.AlgoType) for line in f if line.startswith('[')]
         SourceSections = [line.strip().strip('[]') for line in f if line.startswith('[')]
 
-
 vPar = {}#ROOT.vector(ROOT.JetCorrectorParameters)()
 for source in SourceSections:
-    vPar[source]=ROOT.JetCorrectorParameters('{}/{}_UncertaintySources_{}.txt'.format(args.inputTXT,args.inputTXT,args.AlgoType),source)
+    vPar[source]=ROOT.JetCorrectorParameters(file_to_try,source)
 
 from correctionlib.schemav2 import Correction, Binning, Category, Formula, FormulaRef, CompoundCorrection
 from correctionlib import schemav2 as schema

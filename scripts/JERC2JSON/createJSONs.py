@@ -15,7 +15,7 @@ def createSingleYearJSON(jerList, jecList, algosToConsider, outputName):
 
     for p in jecAlgoList:
         jec,algo=p
-        subprocess.run(["wget","-q","-O","{}.tar.gz".format(jec), "https://github.com/cms-jet/JECDatabase/raw/master/tarballs/{}.tar.gz".format(jec)])
+        subprocess.run(["wget","-q","-O","{}.tar.gz".format(jec), "https://github.com/ktht/JECDatabase/raw/prelegacy/tarballs/{}.tar.gz".format(jec)])
         shutil.unpack_archive("{}.tar.gz".format(jec),jec)
         subprocess.run(["python3", "JEC2JSON.py", "-a",algo, jec])
 
